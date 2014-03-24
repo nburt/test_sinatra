@@ -1,0 +1,3 @@
+require './appy'
+
+run Appy
