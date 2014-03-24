@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Food Repository</title>
+</head>
 <body>
-<a href="/new_item">Submit New Item</a>
+<a href="/new-item">Submit New Item</a>
+  <% FOOD.each do |item| %>
+    <ul>
+      <li><%= item %></li>
+    </ul>
+  <% end %>
 </body>
 </html>
