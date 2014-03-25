@@ -11,8 +11,6 @@ feature "Manage items" do
 
     expect(page).to have_content("Submit New Item")
 
-    expect(page).to_not have_content("Mac n' Cheese")
-
     click_link("Submit New Item")
     fill_in "new_item", with: "Mac n' Cheese"
     click_on("Create Item")
@@ -22,5 +20,25 @@ feature "Manage items" do
     within ("h1") do
       expect(page).to have_content("Mac n' Cheese")
     end
+  end
+
+  scenario "user can edit items" do
+    visit "/"
+    click_link("Submit New Item")
+    fill_in "new_item", with: "Mac n' Cheese"
+    click_on("Create Item")
+
+    visit "/item/0"
+
+    click_link("Edit Item")
+
+    within ("h1") do
+      expect(page).to have_content "Mac n' Cheese"
+    end
+
+    fill_in "submit_edit", with: "Hush Puppies"
+    click_on("Edit Item")
+
+    expect(page).to have_content "Hush Puppies"
   end
 end

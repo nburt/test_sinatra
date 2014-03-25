@@ -1,0 +1,10 @@
+<html>
+<body>
+<h1> <%= FOOD[@id] %> </h1>
+  <form action="/item/<%= @id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="text" name="submit_edit">
+    <input type="submit" value="Edit Item">
+  </form>
+</body>
+</html>
