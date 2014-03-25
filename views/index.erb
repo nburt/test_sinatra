@@ -5,10 +5,12 @@
 </head>
 <body>
 <a href="/new-item">Submit New Item</a>
+  <% index = 0 %>
   <% FOOD.each do |item| %>
     <ul>
-      <li><%= item %></li>
+      <li><%= item %> - <a href="/item/<%= index %>">Show Item</a></li>
     </ul>
+  <% index += 1%>
   <% end %>
 </body>
 </html>

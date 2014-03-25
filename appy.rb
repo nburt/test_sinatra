@@ -1,6 +1,5 @@
 require 'sinatra/base'
 
-
 class Appy < Sinatra::Base
 
   FOOD = []
@@ -16,5 +15,10 @@ class Appy < Sinatra::Base
   post '/' do
     FOOD << params[:new_item]
     redirect '/'
+  end
+
+  get '/item/:id' do
+    @id = params[:id].to_i
+    erb :item
   end
 end

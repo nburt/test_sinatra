@@ -17,5 +17,10 @@ feature "Manage items" do
     fill_in "new_item", with: "Mac n' Cheese"
     click_on("Create Item")
     expect(page).to have_content("Mac n' Cheese")
+
+    click_link("Show Item")
+    within ("h1") do
+      expect(page).to have_content("Mac n' Cheese")
+    end
   end
 end
