@@ -2,5 +2,9 @@
 <body>
 <h1> <%= FOOD[@id] %></h1>
 <a href="/item/<%= @id %>/edit">Edit Item</a>
+<form action="/item/:id" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Item">
+</form>
 </body>
 </html>

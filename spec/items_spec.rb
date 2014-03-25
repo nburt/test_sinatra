@@ -40,5 +40,10 @@ feature "Manage items" do
     click_on("Edit Item")
 
     expect(page).to have_content "Hush Puppies"
+
+    visit "/item/0"
+
+    click_on "Delete Item"
+    expect(page).to_not have_content "Hush Puppies"
   end
 end

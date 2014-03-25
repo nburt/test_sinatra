@@ -33,4 +33,10 @@ class Appy < Sinatra::Application
     FOOD[@id] = params[:submit_edit]
     redirect '/'
   end
+
+  delete '/item/:id' do
+    @id = params[:id].to_i
+    FOOD.delete_at(@id)
+    redirect '/'
+  end
 end
